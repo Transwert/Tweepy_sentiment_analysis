@@ -13,13 +13,13 @@ class TwitterStreamer():
 	'''
 	Class for streaming and processing live tweets.
 	'''
-	def __init(self):
+	def __init__(self):
 		pass
 
 	def stream_tweets(self,fetched_tweets_filename, hash_tag_list):
 		# this handles Twitter authentication and connection to the Twitter Streaming API.
 
-		listener = StdOutListener()
+		listener = StdOutListener(fetched_tweets_filename)
 		auth = OAuthHandler(twitter_credentials.CONSUMER_KEY, twitter_credentials.CONSUMER_SECRET)
 		auth.set_access_token(twitter_credentials.ACCESS_TOKEN, twitter_credentials.ACCESS_TOKEN_SECRET)
 
